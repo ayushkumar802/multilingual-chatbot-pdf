@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace, HuggingFaceEndpointEmbeddings
-from langchain.schema import Document
+from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough, RunnableParallel
 from langchain_core.output_parsers import StrOutputParser
@@ -181,3 +181,4 @@ if prompt_ := st.chat_input("Type your question...", key="user_chat_main"):
     with st.chat_message("assistant"):
 
         st.markdown(response)
+
