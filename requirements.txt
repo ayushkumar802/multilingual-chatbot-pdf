@@ -3,8 +3,8 @@ langchain
 langchain-community
 langchain-huggingface
 chromadb
-semantic-router==0.0.72
-semantic-chunkers==0.0.12
+semantic-router>=0.0.70
+semantic-chunkers>=0.1.0
 huggingface_hub
 pypdf
 pydantic
