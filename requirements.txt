@@ -2,10 +2,9 @@ streamlit
 langchain
 langchain-community
 langchain-huggingface
-langchain-core
 chromadb
-semantic-router
-semantic-chunkers
+semantic-router==0.0.72
+semantic-chunkers==0.0.12
 huggingface_hub
 pypdf
 pydantic
