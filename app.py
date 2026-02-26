@@ -1,25 +1,18 @@
 import streamlit as st
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings,HuggingFaceEndpoint, ChatHuggingFace, HuggingFaceEndpointEmbeddings
+from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace, HuggingFaceEndpointEmbeddings
 from langchain.schema import Document
-from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough, RunnableParallel
 from langchain_core.output_parsers import StrOutputParser
-from operator import itemgetter
-from langchain.retrievers import MultiQueryRetriever
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain.vectorstores import Chroma
-from langchain.document_loaders import TextLoader, PyPDFLoader
-from langchain_core.output_parsers import PydanticOutputParser
-from pydantic import BaseModel, Field
-from typing import List
+from langchain.document_loaders import PyPDFLoader
 import tempfile
 import string
 from huggingface_hub import login
-from semantic_router.encoders import HFEndpointEncoder, HuggingFaceEncoder
+from semantic_router.encoders import HFEndpointEncoder
 from semantic_chunkers import StatisticalChunker
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 import os
 
 def clean_str(text: str) -> str:
@@ -186,4 +179,5 @@ if prompt_ := st.chat_input("Type your question...", key="user_chat_main"):
 
     # Show latest AI response immediately
     with st.chat_message("assistant"):
+
         st.markdown(response)
