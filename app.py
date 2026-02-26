@@ -6,8 +6,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough, RunnableParallel
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
-from langchain.vectorstores import Chroma
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.vectorstores import Chroma
+from langchain_community.document_loaders import PyPDFLoader
 import tempfile
 import string
 from huggingface_hub import login
@@ -181,4 +181,5 @@ if prompt_ := st.chat_input("Type your question...", key="user_chat_main"):
     with st.chat_message("assistant"):
 
         st.markdown(response)
+
 
